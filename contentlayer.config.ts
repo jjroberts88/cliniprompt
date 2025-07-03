@@ -173,7 +173,7 @@ export const Project = defineDocumentType(() => ({
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
         name: doc.title,
-        description: doc.description,
+        description: doc.summary,
         dateCreated: doc.date,
         applicationCategory: 'HealthcareApplication',
         operatingSystem: 'Web',
