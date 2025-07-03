@@ -147,9 +147,45 @@ export const Authors = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Project = defineDocumentType(() => ({
+  name: 'Project',
+  filePathPattern: 'projects/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    summary: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    stack: { type: 'list', of: { type: 'string' }, default: [] },
+    status: { type: 'string', required: true }, // 'completed', 'ongoing', 'archived'
+    featured: { type: 'boolean', default: false },
+    demo: { type: 'string' },
+    github: { type: 'string' },
+    website: { type: 'string' },
+    image: { type: 'string' },
+    layout: { type: 'string' },
+  },
+  computedFields: {
+    ...computedFields,
+    structuredData: {
+      type: 'json',
+      resolve: (doc) => ({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: doc.title,
+        description: doc.description,
+        dateCreated: doc.date,
+        applicationCategory: 'HealthcareApplication',
+        operatingSystem: 'Web',
+        url: doc.demo || `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}))
+
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Authors],
+  documentTypes: [Blog, Authors, Project],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [

@@ -1,10 +1,17 @@
-import projectsData from '@/data/projectsData'
+import { allProjects } from 'contentlayer/generated'
 import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 
 export default function Projects() {
+  const sortedProjects = allProjects.sort((a, b) => {
+    // Sort by featured first, then by date
+    if (a.featured && !b.featured) return -1
+    if (!a.featured && b.featured) return 1
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -13,18 +20,19 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Showcase your projects with a hero image (16 x 9)
+            Innovative health technology solutions designed to improve patient care and healthcare
+            delivery
           </p>
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
+            {sortedProjects.map((project) => (
               <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
+                key={project.title}
+                title={project.title}
+                description={project.summary}
+                imgSrc={project.image}
+                href={`/projects/${project.slug}`}
               />
             ))}
           </div>

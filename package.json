@@ -1,7 +1,22 @@
 {
-  "name": "tailwind-nextjs-starter-blog",
-  "version": "2.4.0",
+  "name": "cliniprompt-ai-website",
+  "version": "1.0.0",
   "private": true,
+  "description": "Professional health technology portfolio and blog for CliniPrompt.ai",
+  "author": "James Roberts",
+  "homepage": "https://cliniprompt.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjroberts88/cliniprompt-blog.git"
+  },
+  "keywords": [
+    "health tech",
+    "portfolio",
+    "blog",
+    "nextjs",
+    "tailwind",
+    "healthcare AI"
+  ],
   "scripts": {
     "start": "next dev",
     "dev": "cross-env INIT_CWD=$PWD next dev",
