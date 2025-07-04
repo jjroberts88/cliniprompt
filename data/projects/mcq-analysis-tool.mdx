@@ -14,51 +14,18 @@ image: /static/images/hat.webp
 
 ## Problem
 
-Medical schools had to adapt to a new system of national medical school examinations, creating challenges for student preparation:
+Medical schools in the UK had to adapt to a new system of a national medical school examination. Support was needed to assist students in improving attainment in these exams.
 
-- **New examination format** requiring updated study approaches
-- **Lack of personalized feedback** on student performance weaknesses
-- **Difficulty identifying knowledge gaps** from exam results
-- **Generic revision materials** not tailored to individual student needs
-- **Time-intensive manual analysis** of student performance patterns
+## Solution
+
+This tool analyses a student's responses to a multiple choice, medical finals mock exam. The exam questions were initially analysed using an LLM to produce a database of the topics and subjects linked to each question.
+
+The student responses are processed by the application and scored against the answer schema. Incorrect responses are identified. Details of any subject areas answered incorrectly are then collated. This data can then be processed by the LLM to produce a report alongside a personalised, structured revision plan for the student to ensure gaps in knowledge are improved.
 
 ## Overview
 
-An intelligent exam analysis tool that processes medical student responses to multiple choice questions and generates personalized revision plans. The system uses LLM analysis to categorize questions by topic and subject area, then identifies knowledge gaps to create targeted study recommendations.
+Key aspects of this project were:
 
-**Key capabilities:**
-
-- **Automated question analysis** using LLM to categorize topics and subjects
-- **Performance gap identification** through incorrect response analysis
-- **Personalized revision plan generation** based on individual weaknesses
-- **Cost-effective processing** using basic coding techniques for marking
-- **Customizable study schedules** with adjustable timescales
-- **Comprehensive subject area mapping** for medical curriculum alignment
-
-## Stack
-
-**Backend:**
-
-- Python for core application logic and exam marking
-- LLM integration for question analysis and categorization
-- SQLite for question database and topic mapping
-- Data processing libraries for performance analysis
-
-## Status
-
-**Current Phase:** Production Ready
-
-The tool successfully analyzes student exam responses and generates personalized revision plans, optimizing costs through efficient processing techniques.
-
-**Progress:**
-
-- ✅ Question analysis and categorization system
-- ✅ Performance gap identification algorithms
-- ✅ Personalized revision plan generation
-- ✅ Cost-optimized processing implementation
-- ✅ Customizable output formatting
-
-## Links
-
-- **Demo:** [Live Demo](#)
-- **GitHub:** [Repository Link](#)
+- Required building an 'ingestion' pipeline for the initial analysis and data extraction for the exam papers and mark scheme
+- I chose 'traditional' python coding methods for the exam marking process instead of an LLM to avoid hallucinations and unnecessary LLM api calls
+- The output summaries can be easily customised using structured prompt templates

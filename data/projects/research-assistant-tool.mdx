@@ -14,59 +14,12 @@ image: /static/images/flask.webp
 
 ## Problem
 
-Keeping up with rapidly evolving medical research requires efficient literature discovery:
+I needed a tool to help me identify recent scientific papers relevant to the subject fields relevant to my website
 
-- **Information overload** from vast quantities of published research
-- **Time-intensive manual searching** through research databases
-- **Difficulty filtering relevant papers** from broad search results
-- **Challenge staying current** with developments across multiple fields
-- **Need for specialized content** for 4pmedicine.com website
+## Solution
 
-## Overview
+I run 4pmedicine.com - a website for exploring Predictive, Preventative, Personalised and Participatory medicine. To keep up to date with current developments I need to find the key publications in these fields. This tool was designed to work with the PubMed E-utilities api. It can retrieve titles and abstracts based on journals, date ranges and keywords. The output can be reviewed by google gemini to produce a summary of the key papers that may be of interest.
 
-An automated research discovery tool designed to identify and summarize relevant scientific papers from PubMed. Built specifically to support content creation for 4pmedicine.com, focusing on Predictive, Preventative, Personalised and Participatory medicine.
+## Future developments
 
-**Key capabilities:**
-
-- **PubMed API integration** for comprehensive literature searches
-- **Advanced filtering** by journals, date ranges, and keywords
-- **Automated title and abstract retrieval** for relevant papers
-- **AI-powered summarization** using Google Gemini
-- **Key paper identification** and relevance ranking
-- **Structured output** for content creation workflows
-
-## Stack
-
-**Backend:**
-
-- Python for core application logic
-- PubMed API for literature database access
-- Google Gemini for paper summarization and analysis
-- Data processing libraries for result filtering
-
-## Status
-
-**Current Phase:** Active Development
-
-The tool is operational and being enhanced with extended PubMed MCP capabilities for future deployment as a remote MCP service.
-
-**Progress:**
-
-- ✅ PubMed API integration completed
-- ✅ Advanced search filtering implemented
-- ✅ Google Gemini summarization integrated
-- 🔄 Extending PubMed MCP capabilities
-- ⏳ Remote MCP deployment planning
-
-**Future Developments:**
-
-- **Extended MCP capabilities** for enhanced functionality
-- **Remote MCP deployment** for broader accessibility
-- **Enhanced filtering algorithms** for improved relevance
-- **Integration with additional research databases**
-
-## Links
-
-- **Demo:** [Live Demo](#)
-- **GitHub:** [Repository Link](#)
-- **Website:** [4pmedicine.com](https://4pmedicine.com)
+I am working on extending the capabilities of the pubmed MCPs currently available. Once ready I plan to deploy this as a remote MCP offering.

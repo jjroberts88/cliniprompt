@@ -1,0 +1,25 @@
+---
+title: GMC AI Bot
+summary: RAG system for UK medical practice guidance
+date: 2024-01-15
+tags: ['RAG', 'medical guidance', 'chatbot', 'GMC']
+stack: ['Flowise', 'OpenAI', 'Pinecone', 'Vercel', 'Railway']
+status: completed
+featured: false
+demo: #
+github: #
+website: https://cliniprompt.ai
+image: /static/images/letter.webp
+---
+
+## Problem
+
+I wanted to learn about RAG systems and integration with chat agents.
+
+## Solution
+
+I chose to build this system on the GMC guidance which provides advice to doctors in the UK on how they should practice. The documents are quite detailed and cover a broad range of topics.
+
+I used the document store function in Flowise and open ai embeddings to process the pdfs. The vectorised chunks were added to a Pinecone database. Using flowise I created a simple chat flow in Flowise that could query the vector database. The system prompt was used to provide some guardrails and limit the tool to answering questions related to GMC guidance.
+
+I used a Railway deployment for flowise then called this through a basic site hosted on vercel.
