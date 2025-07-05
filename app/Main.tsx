@@ -53,7 +53,7 @@ export default function Home({ posts, featuredProjects }) {
               View all projects &rarr;
             </Link>
           </div>
-          <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <Card
                 key={project.title}
