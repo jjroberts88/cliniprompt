@@ -2,7 +2,7 @@ import Image from './Image'
 import Link from './Link'
 
 const Card = ({ title, description, imgSrc, href }) => (
-  <div className="max-w-[544px] md:w-1/2">
+  <div className="w-full">
     <div className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-gray-200/60 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700/60">
       {imgSrc &&
         (href ? (
