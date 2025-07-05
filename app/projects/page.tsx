@@ -25,7 +25,7 @@ export default function Projects() {
           </p>
         </div>
         <div className="container py-12">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {sortedProjects.map((project) => (
               <Card
                 key={project.title}
