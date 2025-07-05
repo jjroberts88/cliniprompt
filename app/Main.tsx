@@ -18,9 +18,9 @@ export default function Home({ posts, featuredProjects }) {
             <span className="text-primary-600 dark:text-primary-400 block">& Expertise</span>
           </h1>
           <p className="max-w-2xl text-xl leading-8 text-gray-600 dark:text-gray-300">
-            Welcome to CliniPrompt - here I showcase some of the latest projects and ideas I am
-            working on. Please feel free to get in touch to learn more about ways we can enhance the
-            future of health technology.
+            Welcome to CliniPrompt - a collection of my latest projects and ideas in health
+            technology. I'm always excited to meet fellow health tech enthusiasts. Feel free to
+            reach out if your interested in exploring these topics together!
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
@@ -33,7 +33,7 @@ export default function Home({ posts, featuredProjects }) {
               href="/about"
               className="focus:ring-primary-500 inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:outline-none dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
             >
-              Learn More
+              About
             </Link>
           </div>
         </div>
