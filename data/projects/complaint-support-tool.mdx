@@ -1,9 +1,9 @@
 ---
 title: Complaint Support Tool
-summary: LLM-based application to support clinicians and managers in producing complaint response letters
+summary: AI assistance for medical complaint letter responses
 date: 2024-01-15
 tags: ['LLM', 'healthcare administration', 'complaint management']
-stack: ['Python', 'LangChain', 'Claude API', 'FastAPI', 'PostgreSQL', 'Docker']
+stack: ['LangChain', 'Flowise', 'Claude', 'React', 'Python']
 status: ongoing
 featured: true
 demo: #
@@ -14,61 +14,8 @@ image: /static/images/letter.webp
 
 ## Problem
 
-Clinical complaints represent a significant source of stress and administrative burden for healthcare organizations:
+Responding to complaints can be a stressful and time-consuming process. There are important aspects to the content, structure and information required in clinical complaint responses. Poor quality responses can result in further escalation of a complaint and additional distress to those involved.
 
-- **High stress levels** for clinical staff dealing with complaint responses
-- **Time-consuming process** to craft appropriate and comprehensive responses
-- **Risk of escalation** when responses are inadequate or miss key points
-- **Inconsistent quality** in complaint response letters across different staff members
-- **Administrative burden** that takes clinicians away from patient care
-- **Potential for further distress** to both staff and patients when complaints are poorly handled
+## Solution
 
-## Overview
-
-A comprehensive LLM-powered application designed to streamline the complaint response process for healthcare organizations. The system analyzes de-identified complaint letters and provides structured, evidence-based response templates with intelligent assistance for completion.
-
-**Key capabilities:**
-
-- **Automated complaint analysis** of uploaded de-identified letters
-- **Structured response template generation** based on complaint content
-- **LLM-assisted completion** with specialized system prompts
-- **Quality assurance** through structured guidance for key response elements
-- **Workflow management** for complaint tracking and resolution
-- **De-identification compliance** for patient privacy protection
-
-## Stack
-
-**Backend:**
-
-- Python for core application logic
-- LangChain for multi-agent LLM orchestration
-- Claude API for natural language processing
-- FastAPI for REST API development
-- PostgreSQL for data storage and complaint tracking
-
-**Infrastructure:**
-
-- Docker for containerization
-- Microservices architecture
-- Cloud-native deployment ready
-
-## Status
-
-**Current Phase:** Redesign and Development
-
-The application has evolved through multiple iterations and is currently being redesigned to integrate with Claude's artifact system for enhanced user experience and response generation capabilities.
-
-**Progress:**
-
-- ✅ Initial multi-agent LangChain architecture developed
-- ✅ Core complaint analysis functionality implemented
-- ✅ De-identification and privacy compliance established
-- 🔄 Redesigning for Claude artifact system integration
-- ⏳ Enhanced user interface development in progress
-- ⏳ System prompt optimization ongoing
-
-## Links
-
-- **Demo:** [Coming Soon](#)
-- **GitHub:** [Repository Link](#)
-- **Documentation:** [Project Docs](#)
+I reviewed current guidance from medical defence unions on the format and content of complaint responses. I used this to produce a structured template for response letters and a detailed system prompt for the various sections (introduction, summary of events, issue 1/2/3, conclusion). This project has gone through various iterations including a LangChain-based approach in Flowise using both chatflows and multi-agent (conductor/worker) frameworks. I am currently re-framing this project to work within the recently released Claude Artifacts framework to allow easier LLM integration and a dynamic UI.
