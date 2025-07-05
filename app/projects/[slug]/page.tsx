@@ -3,6 +3,7 @@ import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { coreContent } from 'pliny/utils/contentlayer'
 import { genPageMetadata } from 'app/seo'
 import { notFound } from 'next/navigation'
+import { components } from '@/components/MDXComponents'
 
 interface ProjectPageProps {
   params: Promise<{
@@ -111,7 +112,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </header>
           <div className="pt-6 pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
-            <MDXLayoutRenderer code={project.body.code} />
+            <MDXLayoutRenderer code={project.body.code} components={components} />
           </div>
         </div>
       </div>
