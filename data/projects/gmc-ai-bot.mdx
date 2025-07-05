@@ -6,9 +6,9 @@ tags: ['RAG', 'medical guidance', 'chatbot', 'GMC']
 stack: ['Flowise', 'OpenAI', 'Pinecone', 'Vercel', 'Railway']
 status: completed
 featured: false
-demo: #
-github: #
-website: https://cliniprompt.ai
+demo: https://gmc-ai.vercel.app/
+github: https://github.com/jjroberts88/gmc-agent-site
+website: https://gmc-ai.vercel.app/
 image: /static/images/letter.webp
 ---
 
@@ -18,8 +18,16 @@ I wanted to learn about RAG systems and integration with chat agents.
 
 ## Solution
 
-I chose to build this system on the GMC guidance which provides advice to doctors in the UK on how they should practice. The documents are quite detailed and cover a broad range of topics.
+I chose to build this system on the GMC guidance which provides advice to doctors in the UK on how they should practice. The PDF documents are quite detailed and cover a broad range of topics.
 
-I used the document store function in Flowise and open ai embeddings to process the pdfs. The vectorised chunks were added to a Pinecone database. Using flowise I created a simple chat flow in Flowise that could query the vector database. The system prompt was used to provide some guardrails and limit the tool to answering questions related to GMC guidance.
+I used the document store function in Flowise and OpenAI embeddings to process the PDFs. I chose an appropriate 'chunking' strategy to ensure adequate content and context was maintained whilst optimising the cost and speed of the RAG system. OpenAI embedding models were used to vectorise the chunks then these were upserted to a Pinecone database.
 
-I used a Railway deployment for flowise then called this through a basic site hosted on vercel.
+Using flowise I created a simple chat agent that could query the vector database and maintain context in a multi-turn conversation. I used a detailed system prompt to provide some guardrails and limit the tool to answering questions related to the intended use case.
+
+The Flowise instance was deployed on Railway and the frontend was hosted on Vercel.
+
+The chatbot was able to return relevant responses related to GMC guidance by retrieving relevant data from the vector database.
+
+I have currently hibernated this project to avoid server/api costs but would be happy to share the code if you are interested.
+
+![GMC AI Bot Interface](/static/images/gmc.png)
