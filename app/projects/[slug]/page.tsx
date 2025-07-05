@@ -89,14 +89,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 )}
               </div>
               <div className="flex justify-center space-x-2 pt-6">
-                {project.stack?.map((tech) => (
-                  <span
-                    key={tech}
-                    className="inline-flex items-center rounded-full bg-gray-200 px-3 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {project.stack?.map((tech, index) => {
+                  const colors = [
+                    'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+                    'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
+                    'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300',
+                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
+                    'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300',
+                  ]
+                  return (
+                    <span
+                      key={tech}
+                      className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium ${colors[index % colors.length]}`}
+                    >
+                      {tech}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           </header>
