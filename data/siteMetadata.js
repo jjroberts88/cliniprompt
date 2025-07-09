@@ -3,8 +3,7 @@ const siteMetadata = {
   title: 'CliniPrompt.ai - Health Technology Portfolio',
   author: 'James Roberts',
   headerTitle: 'CliniPrompt.ai',
-  description:
-    'Professional health technology portfolio and blog showcasing innovative solutions in healthcare AI, clinical decision support, and digital health transformation.',
+  description: 'Health technology portfolio - Dr James Roberts',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://cliniprompt.ai',
